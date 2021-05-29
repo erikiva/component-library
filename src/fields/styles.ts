@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
+import { TextareaProps } from './Textarea';
 import {
   SECONDARY_COLOR,
   SECONDARY_TEXT_COLOR,
@@ -35,4 +36,10 @@ export const StyledInput = styled.input`
     background-color: ${SECONDARY_COLOR};
     opacity: ${DISABLED_OPACITY};
   }
+`;
+
+export const StyledTextarea = styled(StyledInput as 'textarea').attrs({
+  as: 'textarea',
+})<TextareaProps>`
+  resize: ${(props) => !props.isResizable && 'none'};
 `;
