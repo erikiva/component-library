@@ -29,6 +29,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(['secondary', 'primary', 'danger']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   isFullWidth: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 Button.defaultProps = {

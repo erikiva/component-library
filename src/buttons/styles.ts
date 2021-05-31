@@ -1,16 +1,24 @@
-import styled, {css} from "styled-components";
-import { ButtonProps } from "./Button";
+import styled, { css } from 'styled-components';
+import { ButtonProps } from './Button';
 import { transparentize } from 'polished';
-import { DISABLED_OPACITY, PRIMARY_COLOR, PRIMARY_TEXT_COLOR, SECONDARY_COLOR, SECONDARY_TEXT_COLOR, DANGER_COLOR, DANGER_TEXT_COLOR } from '../utils/styles';
+import {
+  DISABLED_OPACITY,
+  PRIMARY_COLOR,
+  PRIMARY_TEXT_COLOR,
+  SECONDARY_COLOR,
+  SECONDARY_TEXT_COLOR,
+  DANGER_COLOR,
+  DANGER_TEXT_COLOR,
+} from '../utils/styles';
 
 const colorStyles = (p: ButtonProps) => {
   let color = SECONDARY_TEXT_COLOR,
     backgroundColor = SECONDARY_COLOR;
 
-  if (p.variant === "primary") {
+  if (p.variant === 'primary') {
     color = PRIMARY_TEXT_COLOR;
     backgroundColor = PRIMARY_COLOR;
-  } else if (p.variant === "danger") {
+  } else if (p.variant === 'danger') {
     color = DANGER_TEXT_COLOR;
     backgroundColor = DANGER_COLOR;
   }
@@ -36,29 +44,29 @@ export const StyledButton = styled.button<ButtonProps>`
   user-select: none;
   border: 1px solid transparent;
   padding: ${(p) => {
-    if (p.size === "large") {
-      return "0.5rem 1rem";
-    } else if (p.size === "small") {
-      return "0.25rem 0.5rem";
+    if (p.size === 'large') {
+      return '0.5rem 1rem';
+    } else if (p.size === 'small') {
+      return '0.25rem 0.5rem';
     }
 
-    return "0.4rem 0.75rem";
+    return '0.4rem 0.75rem';
   }};
   font-size: ${(p) => {
-    if (p.size === "large") {
-      return "1.25rem";
-    } else if (p.size === "small") {
-      return "0.875rem";
+    if (p.size === 'large') {
+      return '1.25rem';
+    } else if (p.size === 'small') {
+      return '0.875rem';
     }
 
-    return "1rem";
+    return '1rem';
   }};
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0;
   transition: all 0.15s ease-in-out;
-  display: ${(p) => (p.isFullWidth ? "block" : "inline-block")};
-  width: ${(p) => p.isFullWidth && "100%"};
+  display: ${(p) => (p.isFullWidth ? 'block' : 'inline-block')};
+  width: ${(p) => p.isFullWidth && '100%'};
 
   &:focus {
     outline: 0;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useUniqueID } from '../utils/useUniqueID';
 import { FieldContext } from './FieldContext';
 import { Label } from './Label';
@@ -15,6 +16,10 @@ export const Field: React.FC & FieldComposition = ({ children }) => {
   const id = useUniqueID();
 
   return <FieldContext.Provider value={id}>{children}</FieldContext.Provider>;
+};
+
+Field.propTypes = {
+  children: PropTypes.node,
 };
 
 Field.Label = Label;
